@@ -10,16 +10,16 @@ app.get('/', function (req, res) {
 });
 
 app.get('/artical-one', function(req, res){
-    res.sendFile('Artical one requested servered here')
-})
+    res.sendFile('Artical one requested servered here');
+});
 
 app.get('/artical-two', function(req, res){
-    res.sendFile('Artical two requested servered here')
-})
+    res.sendFile('Artical two requested servered here');
+});
 
 app.get('/artical-three', function(req, res){
-    res.sendFile('Artical three requested servered here')
-})
+    res.sendFile('Artical three requested servered here');
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
