@@ -49,8 +49,15 @@ var submit= document.getElementById('submit_btn');
 submit.onclick = function(){
     
     //make a request to server & send the name
-    //capture a list of name & render as list
-    var names = ['name1','name2','name3','name4'];
+        //capture the response & store in a variable
+    var request = new XMLHttpRequest();
+    
+        request.onreadystatechange = function(){
+        if(request.readyState===XMLHttpRequest.DONE){
+            //Take some action
+         if(request.status===200){
+    var names = request.responseText;
+    names=JSON.parse(names);
     var list ='';
     for(var i=0; i<names.length;i++){
         list='<li>' + names[i] + '</li>';
@@ -58,6 +65,17 @@ submit.onclick = function(){
     
     var ul=document.getElementById('namelist');
     ul.innerHTML=list;
+         }    
+        }
+        //not done
+    };
+    
+    //Make a request
+   request.open('GET', 'http://gkron18.imad.hasura-app.io/submit-name?name=' + name, true); 
+   request.send(null);
+    
+    //capture a list of name & render as list
+ 
     
 };
 
