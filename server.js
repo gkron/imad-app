@@ -87,7 +87,7 @@ app.get('/counter',function(req, res){
 });
 
 var names = [];
-app.get('/submit-name/:name', function(req,res){
+app.get('/submit-name', function(req,res){
    //get the name from the request
    var name = req.query.name;
    names.push(name);
@@ -100,13 +100,13 @@ app.get('/:articalName', function(req, res){
    res.send(createTemplate(articals[articalName]));
 });
 
-app.get('/artical-two', function(req, res){
+/*app.get('/artical-two', function(req, res){
      res.sendFile(path.join(__dirname, 'ui', 'artical-two.html'));
 });
 
 app.get('/artical-three', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'artical-three.html'));
-});
+});*/
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
