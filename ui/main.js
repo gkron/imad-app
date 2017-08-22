@@ -70,7 +70,7 @@ submit.onclick = function(){
     //Make a request
    var nameInput = document.getElementById('name');
    var name = nameInput.value;
-   request.open('GET', 'http://gkron18.imad.hasura-app.io/submit-name?name='+name, true); 
+   request.open('GET', 'http://gkron18.imad.hasura-app.io/submit-name?name='+ name, true); 
    request.send(null);
     
     //capture a list of name & render as list
